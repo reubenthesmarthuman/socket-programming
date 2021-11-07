@@ -1,0 +1,15 @@
+This is all of the information i've learned about clients within socket programming over the months, this is obviously not even close to everything about clients due to the fact
+that i am nowhere close to being finished with socket programming, it is a pretty big topic overall and there is alot to it but this is mainly ipv4 sockets.
+
+
+
+---  IPV4  ---
+With IPV4 client-sided sockets they use a family called af_inet(this is the same with server-sided sockets), a family is just something which is used to get a socket descriptor, i 
+have no idea why af_inet is called af_inet but you know we work with it. just for reference AF_INET6 is used for IPV6 sockets(once again this is the same with server-sided sockets)
+but what exactly is a client-sided IPV4 socket? Well it all sounds rather complicated and confusing at first but a socket is just an endpoint for sending traffic, a client-sided
+socket is actually insanely simple to develop in python at least, i would imagine it would be pretty easy for other languages as well but i'm working with python at the moment,
+obviously python isn't exactly the best choice in terms of speed but it has a very simple syntax and is really easy to understand. with IPV4 you have 2 main protocols you will be
+dealing with, TCP and UDP, these 2 protocols are very common in ipv4 socket programming and pretty simple to understand. You may also run into ICMP and IGMP but those protocols
+won't really be needed as a such within IPV4 socket programming. When you're sending a packet via a socket within python you have to think about 2 things(this is for if you're
+using the module socket, if you're using scapy.all it is alot different), a payload and a port. A port can matter quite a bit when you're dealing with udp and tcp, however ICMP and
+IGMP do not use a port, because they don't send multiple types of traffic.
